@@ -1,16 +1,50 @@
 <html>
 
 <head>
-    <title>JM's Grade Calculator</title>
+    <title>JT's Grade Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div class="container">
-        <h1 class="mainheader">
-            JT's Grade Calculator
-        </h1>
+        <br>
+        <br>
+        <br>
+        <div class="current" id="current">
+            <p>What is your current grade?</p>
+            <input type="text" id="currentGradeBox" name="currentGradeBox" class="currentGradeBox">
+            <br>
+        </div>
+        <div class="worth" id="worth">
+            <p>What percent of your grade is your final?</p>
+            <input type="text" id="percentBox" name="percentBox">
+            <br>
+            <button id="button" class="submit">
+                Submit!
+            </button>
+            <p class="warning" id="warning">
+            </p>
+        </div>
+
+        <div class="grades">
+            <div id="finalgradeslidecontainer" class="slidecontainer" style="display:none">
+                <div class="testgrade">
+                    <p>Grade on final: <span id="testgrade"></span>%</p>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <input type="range" min="0" max="100.00" value="90.00" step="0.01" slide="true" class="slider" id="finalgradeSlider">
+            </div>
+            <div id="classslidecontainer" class="slidecontainer2" style="display:none">
+                <div class="classgrade">
+                    <p>Grade in class: <span id="classgrade"></span>%</p>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="main.js"></script>
 </body>
 
 </html>
