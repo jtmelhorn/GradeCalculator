@@ -22,11 +22,11 @@
 
 
             if (curGrade.charAt(curGrade.length - 1) == '%') {
-                curGrade = curGrade.slice(0, curGrade.length - 2)
+                curGrade = curGrade.slice(0, curGrade.length - 1)
             }
 
             if (finalWeight.charAt(finalWeight.length - 1) == '%') {
-                finalWeight = finalWeight.slice(0, finalWeight.length - 2)
+                finalWeight = finalWeight.slice(0, finalWeight.length - 1)
             }
 
             //to combat stupid
@@ -37,7 +37,6 @@
             if (finalWeight.charAt(0) == '%') {
                 finalWeight = finalWeight.slice(1, finalWeight.length - 1)
             }
-
 
             if (!isNaN(curGrade) && !isNaN(finalWeight)) {
                 finalWeight = finalWeight / 100
