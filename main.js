@@ -9,12 +9,21 @@
     var ninety = 90
 
 
-
+    /**
+     * @author Justin Melhorn
+     * Calculates final grade based on slider value
+     * slider, output = grade on final exam
+     * output2 = final grade in class
+     */
     slider.oninput = function() {
         output.innerHTML = slider.value;
         output2.innerHTML = ((slider.value * finalWeight) + ((1 - finalWeight) * curGrade)).toFixed(2)
     }
 
+    /**
+     * @author Justin Melhorn
+     * When button is clicked, hide original text boxes and show slider.  Calculate inital value if you got a 70 on the exam.
+     */
     document.getElementById("button").addEventListener("click",
         function() {
             curGrade = document.getElementById("currentGradeBox").value
@@ -44,9 +53,9 @@
                 document.getElementById('current').style.display = "none";
                 document.getElementById('finalgradeslidecontainer').style.display = "block";
                 document.getElementById('classslidecontainer').style.display = "block";
-                slider.value = 90
+                slider.value = 70
                 output.innerHTML = ninety.toFixed(2)
-                output2.innerHTML = ((90 * finalWeight) + ((1 - finalWeight) * curGrade)).toFixed(2)
+                output2.innerHTML = ((70 * finalWeight) + ((1 - finalWeight) * curGrade)).toFixed(2)
             } else {
                 document.getElementById('warning').innerHTML = "Please enter number in format xx.xx"
             }
