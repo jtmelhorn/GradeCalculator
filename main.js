@@ -3,8 +3,8 @@
     var output = document.getElementById("testgrade");
     var output2 = document.getElementById("classgrade");
 
-    var curGrade
-    var finalWeight
+    var curGrade = document.getElementById("currentGradeBox").value
+    var finalWeight = document.getElementById("percentBox").value
 
     var ninety = 90
 
@@ -12,7 +12,7 @@
 
     slider.oninput = function() {
         output.innerHTML = slider.value;
-        output2.innerHTML = ((slider.value * finalWeight / 100) + ((1 - finalWeight / 100) * curGrade)).toFixed(2)
+        output2.innerHTML = ((slider.value * finalWeight) + ((1 - finalWeight) * curGrade)).toFixed(2)
     }
 
     document.getElementById("button").addEventListener("click",
@@ -40,13 +40,14 @@
 
 
             if (!isNaN(curGrade) && !isNaN(finalWeight)) {
+                finalWeight = finalWeight / 100
                 document.getElementById('worth').style.display = "none";
                 document.getElementById('current').style.display = "none";
                 document.getElementById('finalgradeslidecontainer').style.display = "block";
                 document.getElementById('classslidecontainer').style.display = "block";
                 slider.value = 90
                 output.innerHTML = ninety.toFixed(2)
-                output2.innerHTML = ((90.00 * finalWeight / 100) + ((1 - finalWeight / 100) * curGrade)).toFixed(2);
+                output2.innerHTML = ((90 * finalWeight) + ((1 - finalWeight) * curGrade)).toFixed(2)
             } else {
                 document.getElementById('warning').innerHTML = "Please enter number in format xx.xx"
             }
